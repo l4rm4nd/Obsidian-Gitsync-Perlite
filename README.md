@@ -1,6 +1,6 @@
 # Obsidian-Gitsync-Perlite
 
-Docker container to continously sync Obsidian markdown notes from a GitHub repository and publish it for the webs.
+Docker container to continuously sync Obsidian markdown notes from a GitHub repository and publish it for the webs.
 
 # Usage
 
