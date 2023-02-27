@@ -22,10 +22,9 @@ sudo chown -R 1000:1000 repository/
 # start the container
 docker network create proxy
 docker compose up -d
-
-# Web service available at http://127.0.0.1:8888
-# May combine with a reverse proxy such as Traefik
 ````
+
+Then browse http://127.0.0.1:8888 to inspect your markdown notes. May combine with a reverse proxy such as Traefik and publish securely to the interwebs. Enjoy!
 
 # Acknowledgement
 
