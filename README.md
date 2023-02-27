@@ -20,6 +20,7 @@ sudo chmod -R 777 repository/
 sudo chown -R 1000:1000 repository/
 
 # start the container
+docker network create proxy
 docker compose up -d
 
 # Web service available at http://127.0.0.1:8888
