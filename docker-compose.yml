@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  perlite:
+    image: sec77/perlite:latest
+    container_name: perlite
+    restart: unless-stopped
+    environment:
+      - NOTES_PATH=Demo # do not change this
+      - HIDE_FOLDERS=docs,private,trash
+      - LINE_BREAKS=true
+    volumes:
+      - ./repository/root:/var/www/perlite/Demo:ro
+    networks:
+      - proxy      
+
+  perlite-web:
+    build:
+        context: ./web
+    image: sec77/perlite_web:stable
+    container_name: perlite-web
+    restart: unless-stopped
+    ports:
+      - 8888:80
+    volumes_from: 
+      - perlite       
+    depends_on:
+      - perlite
+    networks:
+      - proxy
+    #labels:
+    #  - traefik.enable=true
+    #  - traefik.http.routers.perlite.rule=Host(`kb.example.com`)
+    #  - traefik.http.services.perlite.loadbalancer.server.port=80
+    #  - traefik.docker.network=proxy
+    #  # Part for optional traefik middlewares
+    #  - traefik.http.routers.perlite.middlewares=basic-auth@file  
+
+  perlite-git-sync:
+    image: l4rm4nd/git-sync:latest
+    container_name: perlite-git-sync
+    restart: unless-stopped
+    user: 1000:1000
+    environment:
+      - GIT_SYNC_USERNAME=<USERNAME> # your github username
+      - GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # your github access token
+      - GIT_SYNC_PERIOD=30s
+      - GIT_SYNC_REPO=https://github.com/l4rm4nd/Obsidian-Knowledge-Base # your github repository to sync
+      - GIT_SYNC_ROOT=/tmp/git/root # do not change this
+    volumes:
+      - ./repository:/tmp/git # volume bind mount path to store synced github repo data
+    networks:
+      - proxy      
+
+networks:
+  proxy:
+    external: true      
