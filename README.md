@@ -55,6 +55,12 @@ If you want to adjust the website's title, please adjust the `index.php` file th
 12   $title = 'Obsidian-Gitsync-Perlite';
 ````
 
+# Links & Images
+
+To correctly display images and links you have to adjust your Obsidian settings slightly. 
+
+In detail, you have to enable relative path links. Please follow the instructions [here](https://github.com/secure-77/Perlite/wiki/03---Perlite-Settings#required-settings).
+
 # Acknowledgement
 
 Many thanks to the original devs:
