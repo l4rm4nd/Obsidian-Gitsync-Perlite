@@ -6,11 +6,11 @@ services:
     container_name: perlite
     restart: unless-stopped
     environment:
-      - NOTES_PATH=Demo # do not change this
+      - NOTES_PATH=Demo # if you change this name, please also adjust below container path /Demo
       - HIDE_FOLDERS=docs,private,trash
       - LINE_BREAKS=true
     volumes:
-      - ./repository/root:/var/www/perlite/Demo:ro
+      - ./repository/root:/var/www/perlite/Demo:ro # adjust container path /Demo if you want to use a custom NOTES_PATH
     networks:
       - proxy
 
