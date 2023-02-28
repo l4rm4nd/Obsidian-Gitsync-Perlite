@@ -2,6 +2,8 @@
 
 Docker container to continuously sync Obsidian markdown notes from a GitHub repository and publish it for the webs.
 
+![image](https://user-images.githubusercontent.com/21357789/221725647-fe96c399-b040-4ce2-aaef-3f8584fbd280.png)
+
 # Usage
 
 ````
