@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       - NOTES_PATH=Demo # if you change this name, please also adjust below container path /Demo
-      - HIDE_FOLDERS=docs,private,trash
+      - HIDE_FOLDERS=docs,private,trash,Obsidian-Knowledge-Base # add your GitHub repo name here
       - LINE_BREAKS=true
     volumes:
       - ./repository/root:/var/www/perlite/Demo:ro # adjust container path /Demo if you want to use a custom NOTES_PATH
