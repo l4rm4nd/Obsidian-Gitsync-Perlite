@@ -13,6 +13,7 @@ cd Obsidian-Mkdocs-Gitsync
 # add GitHub username
 # add GitHub access token
 # add your GitHub repo to sync
+# add your repo name to HIDE_FOLDERS
 nano docker-compose.yml
 
 # fix permissions
