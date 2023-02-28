@@ -26,6 +26,24 @@ docker compose up -d
 
 Then browse http://127.0.0.1:8888 to inspect your markdown notes. May combine with a reverse proxy such as Traefik and publish securely to the interwebs. Enjoy!
 
+# Customization
+
+If you want to change the default notes path/name `Demo`, you also have to adjust the volume mappings for the perlite service too. So if your to be synced GitHub repo is called `Obsidian_Notes`, adjust the compose file's service Perlite as follows:
+
+````
+services:
+  perlite:
+    image: sec77/perlite:latest
+    container_name: perlite
+    restart: unless-stopped
+    environment:
+      - NOTES_PATH=Obsidian_Notes # <-- adjusted with custom repo name
+      - HIDE_FOLDERS=docs,private,trash
+      - LINE_BREAKS=true
+    volumes:
+      - ./repository/root:/var/www/perlite/Obsidian_Notes:ro # <-- adjusted with custom repo name
+````
+
 # Acknowledgement
 
 Many thanks to the following people:
