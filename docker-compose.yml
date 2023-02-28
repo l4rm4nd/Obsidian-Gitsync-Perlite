@@ -11,6 +11,7 @@ services:
       - LINE_BREAKS=true
     volumes:
       - ./repository/root:/var/www/perlite/Demo:ro # adjust container path /Demo if you want to use a custom NOTES_PATH
+      - ./index.php:/var/www/perlite/index.php:ro # optional; allows to customize the website's title etc.
     networks:
       - proxy
 
