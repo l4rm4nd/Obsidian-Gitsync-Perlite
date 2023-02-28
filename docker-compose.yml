@@ -38,6 +38,7 @@ services:
     #  - traefik.http.routers.perlite.middlewares=basic-auth@file  
 
   perlite-git-sync:
+    # self-built image from https://github.com/kubernetes/git-sync
     image: l4rm4nd/git-sync:latest
     container_name: perlite-git-sync
     restart: unless-stopped
