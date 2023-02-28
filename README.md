@@ -45,6 +45,12 @@ services:
       - ./repository/root:/var/www/perlite/Obsidian_Notes:ro # <-- adjusted with custom repo name
 ````
 
+If you want to adjust the website's title, please adjust the `index.php` file that is bind mounted into the Perlite container. The following line is relevant:
+
+````
+$title = 'Obsidian-Gitsync-Perlite';
+````
+
 # Acknowledgement
 
 Many thanks to the following people:
