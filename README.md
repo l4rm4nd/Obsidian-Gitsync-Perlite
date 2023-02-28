@@ -57,7 +57,7 @@ If you want to adjust the website's title, please adjust the `index.php` file th
 
 # Acknowledgement
 
-Many thanks to the following people:
+Many thanks to the original devs:
 
 - ❤️ [secure-77](https://github.com/secure-77) for [Perlite](https://github.com/secure-77/Perlite)
 - ❤️ [kubernetes](https://github.com/kubernetes) for [git-sync](https://github.com/kubernetes/git-sync)
