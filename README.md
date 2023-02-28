@@ -48,7 +48,7 @@ services:
 If you want to adjust the website's title, please adjust the `index.php` file that is bind mounted into the Perlite container. The following line is relevant:
 
 ````
-$title = 'Obsidian-Gitsync-Perlite';
+12   $title = 'Obsidian-Gitsync-Perlite';
 ````
 
 # Acknowledgement
