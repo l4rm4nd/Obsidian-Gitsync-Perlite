@@ -12,7 +12,7 @@ services:
     volumes:
       - ./repository/root:/var/www/perlite/Demo:ro
     networks:
-      - proxy      
+      - proxy
 
   perlite-web:
     build:
@@ -22,8 +22,8 @@ services:
     restart: unless-stopped
     ports:
       - 8888:80
-    volumes_from: 
-      - perlite       
+    volumes_from:
+      - perlite
     depends_on:
       - perlite
     networks:
@@ -50,8 +50,8 @@ services:
     volumes:
       - ./repository:/tmp/git # volume bind mount path to store synced github repo data
     networks:
-      - proxy      
+      - proxy
 
 networks:
   proxy:
-    external: true      
+    external: true
