@@ -2,6 +2,8 @@
 
 Docker container to continuously sync Obsidian markdown notes from a GitHub repository and publish it for the webs.
 
+Official Perlite [demo here](https://perlite.secure77.de/).
+
 ![image](https://user-images.githubusercontent.com/21357789/221725827-d14001aa-0030-4b5e-b509-cf826227c5b0.png)
 
 # Usage
