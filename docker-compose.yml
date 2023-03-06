@@ -16,13 +16,13 @@ services:
       - proxy
 
   perlite-web:
-    build:
-        context: ./web
-    image: sec77/perlite_web:stable
+    #build:
+    #    context: ./web
+    image: l4rm4nd/perlite_web:stable
     container_name: perlite-web
     restart: unless-stopped
     ports:
-      - 8888:80
+      - 8765:80
     volumes_from:
       - perlite
     depends_on:
@@ -37,22 +37,22 @@ services:
     #  # Part for optional traefik middlewares
     #  - traefik.http.routers.perlite.middlewares=basic-auth@file  
 
-  perlite-git-sync:
-    # self-built image from https://github.com/kubernetes/git-sync
-    image: l4rm4nd/git-sync:latest
-    container_name: perlite-git-sync
-    restart: unless-stopped
-    user: 1000:1000
-    environment:
-      - GIT_SYNC_USERNAME=<USERNAME> # your github username
-      - GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # your github access token
-      - GIT_SYNC_PERIOD=30s
-      - GIT_SYNC_REPO=https://github.com/l4rm4nd/Obsidian-Knowledge-Base # your github repository to sync
-      - GIT_SYNC_ROOT=/tmp/git/root # do not change this
-    volumes:
-      - ./repository:/tmp/git # volume bind mount path to store synced github repo data
-    networks:
-      - proxy
+#  perlite-git-sync:
+#    # self-built image from https://github.com/kubernetes/git-sync
+#    image: l4rm4nd/git-sync:latest
+#    container_name: perlite-git-sync
+#    restart: unless-stopped
+#    user: 1000:1000
+#    environment:
+#      - GIT_SYNC_USERNAME=<USERNAME> # your github username
+#      - GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # your github access token
+#      - GIT_SYNC_PERIOD=30s
+#      - GIT_SYNC_REPO=https://github.com/l4rm4nd/Obsidian-Knowledge-Base # your github repository to sync
+#      - GIT_SYNC_ROOT=/tmp/git/root # do not change this
+#    volumes:
+#      - ./repository:/tmp/git # volume bind mount path to store synced github repo data
+#    networks:
+#      - proxy
 
 networks:
   proxy:
