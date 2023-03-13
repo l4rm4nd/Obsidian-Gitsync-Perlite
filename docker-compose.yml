@@ -44,8 +44,8 @@ services:
     restart: unless-stopped
     user: 1000:1000
     environment:
-      - GIT_SYNC_USERNAME=<USERNAME> # your github username
-      - GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # your github access token
+      #- GIT_SYNC_USERNAME=<USERNAME> # optional; your github username if repo is private
+      #- GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # optional; your github access token if repo is private
       - GIT_SYNC_PERIOD=30s
       - GIT_SYNC_REPO=https://github.com/l4rm4nd/Obsidian-Gitsync-Perlite # your github repository to sync
       - GIT_SYNC_ROOT=/tmp/git/root # do not change this
