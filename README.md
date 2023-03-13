@@ -13,14 +13,13 @@ Official Perlite [demo here](https://perlite.secure77.de/).
 git clone https://github.com/l4rm4nd/Obsidian-Mkdocs-Gitsync
 cd Obsidian-Mkdocs-Gitsync
 
-# change variables in compose file
-# add GitHub username
-# add GitHub access token
-# add your GitHub repo to sync
-# add your repo name to HIDE_FOLDERS
-nano docker-compose.yml
+# adjust `docker-compose.yml` to your needs:
+# 1. add your to be synced GitHub repo at env variable `GIT_SYNC_REPO`
+# 2. add your GitHub username at env variable `GIT_SYNC_USERNAME` - only if your repo is private
+# 3. add GitHub access token at env variable `GIT_SYNC_PASSWORD` - only if your repo is private
+# 4. add your GitHub repo name at env variable `HIDE_FOLDERS`
 
-# fix permissions
+# fix permissions; may have to be run a second time after starting the container
 sudo chmod -R 777 repository/
 sudo chown -R 1000:1000 repository/
 
