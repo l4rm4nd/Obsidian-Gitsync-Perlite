@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       - NOTES_PATH=Demo # if you change this name, please also adjust below container path /Demo
-      - HIDE_FOLDERS=docs,private,trash,Obsidian-Knowledge-Base # add your GitHub repo name here
+      - HIDE_FOLDERS=docs,private,trash,Obsidian-Gitsync-Perlite # add your GitHub repo name here
       - LINE_BREAKS=true
     volumes:
       - ./repository/root:/var/www/perlite/Demo:ro # adjust container path /Demo if you want to use a custom NOTES_PATH
@@ -47,7 +47,7 @@ services:
       - GIT_SYNC_USERNAME=<USERNAME> # your github username
       - GIT_SYNC_PASSWORD=<ACCESS-TOKEN> # your github access token
       - GIT_SYNC_PERIOD=30s
-      - GIT_SYNC_REPO=https://github.com/xxxx/yyyy # your github repository to sync
+      - GIT_SYNC_REPO=https://github.com/l4rm4nd/Obsidian-Gitsync-Perlite # your github repository to sync
       - GIT_SYNC_ROOT=/tmp/git/root # do not change this
     volumes:
       - ./repository:/tmp/git # volume bind mount path to store synced github repo data
