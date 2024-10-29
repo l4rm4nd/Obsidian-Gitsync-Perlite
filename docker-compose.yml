@@ -16,15 +16,15 @@ services:
     #  - proxy
 
   perlite-web:
-    #build:
-    #    context: ./web
-    image: l4rm4nd/perlite_web:stable
+    image: nginx:stable-alpine
     container_name: perlite-web
     restart: unless-stopped
     ports:
       - 8765:80
     volumes_from:
       - perlite
+    volumes:
+      - ./perlite.conf:/etc/nginx/conf.d/default.conf:ro # bind mount the necessary nginx config into container
     depends_on:
       - perlite
     #networks:
