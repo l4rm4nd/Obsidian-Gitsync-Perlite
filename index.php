@@ -10,7 +10,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require 'helper.php';
 
-$title = $siteTitle;
+$title = "Obsidian-Gitsync-Perlite";
 $menu = menu($rootDir);
 $jsonGraphData = getfullGraph($rootDir);
 
